@@ -16,6 +16,7 @@ require("packer").startup(function(use) use("wbthomason/packer.nvim")
     use('xuhdev/vim-latex-live-preview')
     use('joshdick/onedark.vim')
     use{'nvim-treesitter/nvim-treesitter',run = ":TSUpdate",}
+    use('mechatroner/rainbow_csv')
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
