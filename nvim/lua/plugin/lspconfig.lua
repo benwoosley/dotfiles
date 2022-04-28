@@ -45,4 +45,5 @@ require'lspconfig'.jdtls.setup{
        return require'lspconfig'.util.root_pattern('pom.xml', 'gradle.build', '.git')(fname) or vim.fn.getcwd()
     end
  }
+ require'lspconfig'.r_language_server.setup{}
 
