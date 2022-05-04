@@ -4,8 +4,8 @@ if not status_ok then
 end
 configs.setup {
     ensure_installed = "all",
-    sync_install = false,
-    ignore_install = { "phpdoc", "verilog", "swift", "elixir", "ruby"},
+    sync_install = true,
+    ignore_install = { "phpdoc", "verilog", "swift", "elixir", "ruby", "hack", "org"},
     highlight = {
         enable = true,
         disable = { "" },
