@@ -67,4 +67,6 @@ set encoding=utf-8
 au BufWrite * :Autoformat
 let g:livepreview_previewer = 'open -a Preview'
 cnoreabbrev w' w
+let g:loaded_perl_provider = 0
+let g:loaded_ruby_provider = 0
 ]])
