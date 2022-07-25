@@ -7,7 +7,6 @@ configs.setup({
 	"java",
 	"rust",
 	sync_install = true,
-	ignore_install = { "phpdoc", "verilog", "swift", "elixir", "ruby", "hack", "org", "vala" },
 	highlight = {
 		enable = true,
 		disable = { "" },

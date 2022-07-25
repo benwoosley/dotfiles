@@ -12,9 +12,10 @@ require("packer").startup(function(use)
 	use("honza/vim-snippets")
 	use("dcampos/cmp-snippy")
 	use("sainnhe/gruvbox-material")
+	use("mhartington/oceanic-next")
 	use("xuhdev/vim-latex-live-preview")
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use("Chiel92/vim-autoformat")
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use({
 		"williamboman/nvim-lsp-installer",
 		{

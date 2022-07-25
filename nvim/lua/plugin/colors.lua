@@ -1,5 +1,9 @@
 vim.cmd([[
-colorscheme gruvbox-material
+if (has("termguicolors"))
+  set termguicolors
+endif
 hi normal guibg=NONE
 syntax enable
+set background=dark
+colorscheme OceanicNext
 ]])
