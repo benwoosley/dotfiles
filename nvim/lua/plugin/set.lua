@@ -39,10 +39,6 @@ vim.g.livepreview_previewer = "open -a Preview"
 
 -- for checkhealth optioal
 vim.g.loaded_perl_provider = 0
-vim.g.loaded_ruby_provider = 0
 
--- format on save
-vim.cmd([[au BufWrite * :Autoformat]])
-
--- stop continuing comments on new line
-vim.cmd([[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o]])
+-- python
+vim.g.python3_host_prog = "/usr/bin/python3"

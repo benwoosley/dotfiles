@@ -11,21 +11,27 @@ require("packer").startup(function(use)
 	use("dcampos/nvim-snippy")
 	use("honza/vim-snippets")
 	use("dcampos/cmp-snippy")
-	use("sainnhe/gruvbox-material")
-	use("mhartington/oceanic-next")
 	use("xuhdev/vim-latex-live-preview")
-	use("Chiel92/vim-autoformat")
+	use("EdenEast/nightfox.nvim")
+    use({
+        "jose-elias-alvarez/null-ls.nvim",
+        requires = { "nvim-lua/plenary.nvim" },
+    })
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
 	use({
-		"williamboman/nvim-lsp-installer",
-		{
-			"neovim/nvim-lspconfig",
-			config = function()
-				require("nvim-lsp-installer").setup({})
-				local lspconfig = require("lspconfig")
-				lspconfig.sumneko_lua.setup({})
-			end,
-		},
+		"neovim/nvim-lspconfig",
+		config = function()
+			local lspconfig = require("lspconfig")
+			lspconfig.sumneko_lua.setup({})
+		end,
+	})
+	use({
+		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+		config = function()
+			require("lsp_lines").setup()
+		end,
 	})
 	if packer_bootstrap then
 		require("packer").sync()
