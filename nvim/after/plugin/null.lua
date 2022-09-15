@@ -1,23 +1,27 @@
 local null_ls = require("null-ls")
 local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
+local completion = null_ls.builtins.completion
 
-local sources = {
-	formatting.stylua,
-	formatting.black,
-	formatting.clang_format.with({
-		extra_args = {
-			"--style",
-			"{IndentWidth: 4, BreakBeforeBraces: Allman}",
-		},
-	}),
-}
-
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
-	sources = sources,
-
-	-- you can reuse a shared lspconfig on_attach callback here
+	sources = {
+		-- lua
+		formatting.stylua,
+		-- python
+		formatting.autopep8,
+		-- C/C++
+		formatting.clang_format.with({
+			extra_args = {
+				"--style",
+				"{TabWidth: 4, IndentWidth: 4, AccessModifierOffset: -4, BreakBeforeBraces: Allman, PointerAlignment: Left, ColumnLimit: 0}",
+			},
+		}),
+		-- latex
+		formatting.latexindent,
+		diagnostics.chktex,
+	},
 	on_attach = function(client, bufnr)
+		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 		if client.supports_method("textDocument/formatting") then
 			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 			vim.api.nvim_create_autocmd("BufWritePre", {

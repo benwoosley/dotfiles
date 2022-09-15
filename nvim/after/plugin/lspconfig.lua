@@ -8,12 +8,7 @@ require("mason").setup({
 		},
 	},
 })
-
-require("mason-lspconfig").setup({
-	ensure_installed = { "sumneko_lua", "rust_analyzer" },
-})
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
+require("mason-lspconfig").setup({ ensure_installed = { "sumneko_lua", "rust_analyzer" } }) -- Mappings. See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
@@ -49,6 +44,8 @@ end
 
 -- setups
 local lspconfig = require("lspconfig")
+
+-- lua
 lspconfig.sumneko_lua.setup({
 	on_attach = on_attach,
 	settings = {
@@ -60,14 +57,24 @@ lspconfig.sumneko_lua.setup({
 	},
 })
 
-lspconfig.tsserver.setup({
-	on_attach = on_attach,
-})
-
+-- clangd
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.offsetEncoding = { "utf-16" }
 lspconfig.clangd.setup({
 	on_attach = on_attach,
+	capabilities = capabilities,
 })
 
-lspconfig.pyright.setup({
-	on_attach = on_attach,
-})
+-- default
+local servers = {
+	"tsserver",
+	"pyright",
+	"rust_analyzer",
+	"clangd",
+}
+
+for _, server in ipairs(servers) do
+	lspconfig[server].setup({
+		on_attach = on_attach,
+	})
+end
