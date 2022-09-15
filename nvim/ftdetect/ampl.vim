@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead,BufReadPost *mod,*.dat set syntax=ampl
+autocmd BufNewFile,BufRead,BufReadPost *.mod,*.dat set syntax=ampl
