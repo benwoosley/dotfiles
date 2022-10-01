@@ -4,8 +4,6 @@ require("packer").startup(function(use)
 	use("jiangmiao/auto-pairs")
 	-- wakatime
 	use("wakatime/vim-wakatime")
-	-- nvim/r
-	use("jalvesaq/Nvim-R")
 	-- cmp
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-nvim-lsp")
@@ -16,29 +14,16 @@ require("packer").startup(function(use)
 	use("dcampos/nvim-snippy")
 	use("honza/vim-snippets")
 	use("dcampos/cmp-snippy")
-	-- latex / markdown
-	use("xuhdev/vim-latex-live-preview")
-	use("davidgranstrom/nvim-markdown-preview")
 	--colors
-	use("EdenEast/nightfox.nvim")
-	use({
-		"phha/zenburn.nvim",
-		config = function()
-			require("zenburn").setup()
-		end,
-	})
+	use("mcchrish/zenbones.nvim")
+	use("f-person/auto-dark-mode.nvim")
 	-- telescope
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.0",
-		-- or                            , branch = '0.1.x',
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	-- formatting / linting
-	use({
-		"jose-elias-alvarez/null-ls.nvim",
-		requires = { "nvim-lua/plenary.nvim" },
-	})
+	use({ "jose-elias-alvarez/null-ls.nvim" })
 	-- treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	-- mason

@@ -1,12 +1,13 @@
-vim.cmd([[
-let mapleader=" "
-cnoreabbrev w' w
-" Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+vim.api.nvim_set_keymap("n", "<Leader><Space>", ":set hlsearch!<CR>", { noremap = true, silent = true })
 
+-- Find files using Telescope command-line sugar.
+vim.keymap.set("n", "<Leader>ff", "<CMD>Telescope find_files<CR>")
+vim.keymap.set("n", "<Leader>fg", "<CMD>Telescope live_grep<CR>")
+vim.keymap.set("n", "<Leader>fb", "<CMD>Telescope buffers<CR>")
+vim.keymap.set("n", "<Leader>fh", "<CMD>Telescope help_tags<CR>")
+
+vim.cmd([[
+cnoreabbrev w' w
 map <F5> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
 exec "w"

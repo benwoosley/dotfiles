@@ -19,6 +19,8 @@ null_ls.setup({
 		-- latex
 		formatting.latexindent,
 		diagnostics.chktex,
+		-- html
+		formatting.prettierd,
 	},
 	on_attach = function(client, bufnr)
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -29,7 +31,7 @@ null_ls.setup({
 				buffer = bufnr,
 				callback = function()
 					-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-					vim.lsp.buf.formatting_sync()
+					vim.lsp.buf.format({ bufnr = bufnr })
 				end,
 			})
 		end
