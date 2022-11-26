@@ -63,6 +63,7 @@ capabilities.offsetEncoding = { "utf-16" }
 lspconfig.clangd.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	provideFormatter = false,
 })
 
 -- default
@@ -70,11 +71,15 @@ local servers = {
 	"tsserver",
 	"pyright",
 	"rust_analyzer",
-	"clangd",
+	"texlab",
+	"html",
+	"omnisharp",
+	"gopls",
 }
 
 for _, server in ipairs(servers) do
 	lspconfig[server].setup({
 		on_attach = on_attach,
+		provideFormatter = false,
 	})
 end

@@ -42,3 +42,6 @@ vim.g.loaded_perl_provider = 0
 
 -- python
 vim.g.python3_host_prog = "/usr/bin/python3"
+
+-- copilot node path
+vim.g.copilot_node_command = "/opt/homebrew/opt/node@16/bin/node"

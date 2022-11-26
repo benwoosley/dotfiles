@@ -10,17 +10,14 @@ null_ls.setup({
 		-- python
 		formatting.autopep8,
 		-- C/C++
-		formatting.clang_format.with({
-			extra_args = {
-				"--style",
-				"{TabWidth: 4, IndentWidth: 4, AccessModifierOffset: -4, BreakBeforeBraces: Allman, PointerAlignment: Left, ColumnLimit: 0}",
-			},
-		}),
+		formatting.clang_format,
 		-- latex
 		formatting.latexindent,
 		diagnostics.chktex,
 		-- html
 		formatting.prettierd,
+		-- go
+		formatting.gofumpt,
 	},
 	on_attach = function(client, bufnr)
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

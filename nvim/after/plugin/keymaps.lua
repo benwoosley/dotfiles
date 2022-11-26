@@ -31,7 +31,9 @@ exec "!go build %<"
 exec "!time go run %"
 elseif &filetype == 'mkd'
 exec "!~/.vim/markdown.pl % > %.html &"
-exec "!open -a \"Safari.app\" %.html &"
+exec "!open -a \"Firefox.app\" %.html &"
+elseif &filetype == 'tex'
+exec "!pdflatex %; open %<.pdf"
 endif
 endfunc
 
