@@ -1,6 +1,6 @@
 vim.cmd([[
 set termguicolors
 syntax enable
-colorscheme gruvbox
+colorscheme kanagawa
 highlight Normal ctermbg=NONE guibg=NONE
 ]])

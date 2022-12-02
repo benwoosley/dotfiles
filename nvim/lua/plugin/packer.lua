@@ -13,7 +13,7 @@ require("packer").startup(function(use)
 	use("honza/vim-snippets")
 	use("dcampos/cmp-snippy")
 	-- theme
-	use("morhetz/gruvbox")
+	use("rebelot/kanagawa.nvim")
 	-- telescope
 	use({
 		"nvim-telescope/telescope.nvim",
@@ -23,6 +23,8 @@ require("packer").startup(function(use)
 	use("github/copilot.vim")
 	-- formatting / linting
 	use({ "jose-elias-alvarez/null-ls.nvim" })
+	-- git
+	use("rhysd/git-messenger.vim")
 	-- treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	-- mason
