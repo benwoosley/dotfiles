@@ -15,3 +15,7 @@ Just a few basic plugings and custom alias
 
 ## yabai/skhd
 binary partitioning tiling window manager for macOS (yabai), with keybinds (skhd)
+
+## Other tools...
+[jesseduffield/lazygit](https://github.com/jesseduffield/lazygit)
+sshfs for mounting VMs to local machine (via [macfuse](https://formulae.brew.sh/cask/macfuse))
