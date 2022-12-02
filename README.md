@@ -11,7 +11,7 @@ Mostly settings to integrate with neovim. Automagically attach to old sessions, 
 
 ## ohmyzsh
 
-Just a few basic plugings and custom alias
+a few basic plugins and custom alias
 
 ## yabai/skhd
 binary partitioning tiling window manager for macOS (yabai), with keybinds (skhd)
