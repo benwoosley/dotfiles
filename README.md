@@ -1,8 +1,9 @@
 # dotfiles
 
-<img width="931" alt="Screenshot 2022-11-26 at 1 04 26 AM" src="https://user-images.githubusercontent.com/56568238/204076729-42db5c7c-b7a4-4009-928a-ed6b89c4add4.png">
-
 ## Neovim
+
+<img width="899" alt="Screenshot 2022-12-02 at 12 31 46 AM" src="https://user-images.githubusercontent.com/56568238/205221941-407c52ef-22d0-4c00-8f52-40422379e44f.png">
+
 
 ## Tmux
 
