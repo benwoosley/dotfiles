@@ -2,7 +2,8 @@
 
 ## Neovim
 
-<img width="995" alt="Screenshot 2022-12-02 at 12 29 41 AM" src="https://user-images.githubusercontent.com/56568238/205221663-454b3d9b-e805-45a7-9a4b-1b96f052188b.png">
+<img width="899" alt="Screenshot 2022-12-02 at 12 31 46 AM" src="https://user-images.githubusercontent.com/56568238/205221941-407c52ef-22d0-4c00-8f52-40422379e44f.png">
+
 
 ## Tmux
 
