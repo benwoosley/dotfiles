@@ -13,7 +13,7 @@ require("packer").startup(function(use)
 	-- use("honza/vim-snippets")
 	-- use("dcampos/cmp-snippy")
 	-- theme
-	use("rebelot/kanagawa.nvim")
+	use("luisiacc/gruvbox-baby")
 	-- telescope
 	use({
 		"nvim-telescope/telescope.nvim",
