@@ -8,11 +8,6 @@ require("packer").startup(function(use)
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-cmdline")
-	-- snippy
-	-- use("dcampos/nvim-snippy")
-	-- use("honza/vim-snippets")
-	-- use("dcampos/cmp-snippy")
-	-- theme
 	use("luisiacc/gruvbox-baby")
 	-- telescope
 	use({
