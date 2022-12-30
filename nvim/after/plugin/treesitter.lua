@@ -6,7 +6,7 @@ configs.setup({
 	ensure_installed = "cpp",
 	"java",
 	"rust",
-    "lua",
+	"lua",
 	sync_install = true,
 	highlight = {
 		enable = true,
