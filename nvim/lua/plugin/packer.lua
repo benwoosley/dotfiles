@@ -25,6 +25,12 @@ require("packer").startup(function(use)
 	use({ "jose-elias-alvarez/null-ls.nvim" })
 	-- git
 	use("rhysd/git-messenger.vim")
+	use({
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup()
+		end,
+	})
 	-- treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	-- mason
