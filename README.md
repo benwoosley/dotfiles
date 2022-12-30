@@ -11,4 +11,17 @@ Mostly settings to integrate with neovim. Automagically attach to old sessions, 
 
 ## ohmyzsh
 
-Just a few basic plugings and custom alias
+a few basic plugins and custom alias
+
+## yabai/skhd
+binary partitioning tiling window manager for macOS (yabai), with keybinds (skhd)
+
+## Other tools...
+
+[iTerm2](https://iterm2.com/) terminal emulator
+
+*[homebrew](https://brew.sh/) package manager*
+
+[jesseduffield/lazygit](https://github.com/jesseduffield/lazygit)
+
+sshfs for mounting VMs to local machine (via [macfuse](https://formulae.brew.sh/cask/macfuse))
