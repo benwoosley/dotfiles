@@ -50,6 +50,11 @@ require("packer").startup(function(use)
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	-- mason
 	use({ "williamboman/mason.nvim", requires = { { "williamboman/mason-lspconfig.nvim" } } })
+	-- status line
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+	})
 	-- lspconfig
 	use({
 		"neovim/nvim-lspconfig",
