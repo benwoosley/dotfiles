@@ -1,14 +1,34 @@
 require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	-- autopairs
-	use("jiangmiao/auto-pairs")
+	use({
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
+	})
 	-- cmp
-	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-nvim-lsp")
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-cmdline")
-	use("luisiacc/gruvbox-baby")
+	use({
+		"hrsh7th/nvim-cmp",
+		requires = {
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "hrsh7th/cmp-buffer" },
+			{ "hrsh7th/cmp-path" },
+			{ "hrsh7th/cmp-cmdline" },
+		},
+	})
+	-- theme
+	use("bluz71/vim-nightfly-colors")
+	-- css
+	use({
+		"mrshmllow/document-color.nvim",
+		config = function()
+			require("document-color").setup({
+				-- Default options
+				mode = "background", -- "background" | "foreground" | "single"
+			})
+		end,
+	})
 	-- telescope
 	use({
 		"nvim-telescope/telescope.nvim",
@@ -16,8 +36,8 @@ require("packer").startup(function(use)
 	})
 	-- copilot
 	use("github/copilot.vim")
-	-- formatting / linting
-	use({ "jose-elias-alvarez/null-ls.nvim" })
+	-- formatting / diagnostics
+	use("jose-elias-alvarez/null-ls.nvim")
 	-- git
 	use("rhysd/git-messenger.vim")
 	use({
@@ -29,8 +49,7 @@ require("packer").startup(function(use)
 	-- treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	-- mason
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
+	use({ "williamboman/mason.nvim", requires = { { "williamboman/mason-lspconfig.nvim" } } })
 	-- lspconfig
 	use({
 		"neovim/nvim-lspconfig",

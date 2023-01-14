@@ -18,6 +18,10 @@ vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
+	if client.server_capabilities.colorProvider then
+		-- Attach document colour support
+		require("document-color").buf_attach(bufnr)
+	end
 	client.server_capabilities.document_formatting = false
 	-- Enable completion triggered by <c-x><c-o>
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
@@ -69,13 +73,29 @@ require("lspconfig").sumneko_lua.setup({
 	},
 })
 
--- clangd
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+-- clangd
 capabilities.offsetEncoding = { "utf-16" }
 lspconfig.clangd.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	provideFormatter = false,
+})
+
+-- documentColor
+capabilities.textDocument.colorProvider = {
+	dynamicRegistration = true,
+}
+-- Lsp servers that support documentColor
+require("lspconfig").tailwindcss.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig").cssls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
 
 -- default
