@@ -18,7 +18,23 @@ require("packer").startup(function(use)
 		},
 	})
 	-- theme
-	use("bluz71/vim-nightfly-colors")
+	use({ "catppuccin/nvim", as = "catppuccin" })
+	use("nvim-tree/nvim-web-devicons")
+	use({ "romgrk/barbar.nvim", wants = "nvim-web-devicons" })
+	use({
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons", -- optional, for file icons
+		},
+	})
+	-- term
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "*",
+		config = function()
+			require("toggleterm").setup()
+		end,
+	})
 	-- css
 	use({
 		"mrshmllow/document-color.nvim",
@@ -39,7 +55,7 @@ require("packer").startup(function(use)
 	-- formatting / diagnostics
 	use("jose-elias-alvarez/null-ls.nvim")
 	-- git
-	use("rhysd/git-messenger.vim")
+	use("tpope/vim-fugitive")
 	use({
 		"lewis6991/gitsigns.nvim",
 		config = function()
@@ -53,7 +69,7 @@ require("packer").startup(function(use)
 	-- status line
 	use({
 		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+		requires = { "nvim-tree/nvim-web-devicons", opt = true },
 	})
 	-- lspconfig
 	use({
