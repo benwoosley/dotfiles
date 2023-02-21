@@ -1,10 +1,7 @@
 vim.cmd([[
-colo catppuccin
+colo zenbones
 set termguicolors
 syntax enable
 highlight Normal ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=none
 ]])
-
-require("catppuccin").setup({
-	flavour = "mocha", -- latte, frappe, macchiato, mocha
-})

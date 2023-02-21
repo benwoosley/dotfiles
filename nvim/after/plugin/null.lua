@@ -9,6 +9,10 @@ null_ls.setup({
 		formatting.stylua,
 		-- python
 		formatting.autopep8,
+		diagnostics.pydocstyle,
+		diagnostics.flake8.with({
+			extra_args = { "--ignore=E501" },
+		}),
 		-- C/C++
 		formatting.clang_format,
 		-- latex
@@ -18,6 +22,14 @@ null_ls.setup({
 		formatting.prettierd,
 		-- go
 		formatting.gofumpt,
+		-- git
+		diagnostics.gitlint,
+		-- markdown
+		formatting.markdownlint,
+		diagnostics.markdownlint,
+		-- spell
+		diagnostics.misspell,
+		diagnostics.codespell,
 	},
 	on_attach = function(client, bufnr)
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

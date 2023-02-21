@@ -18,7 +18,14 @@ require("packer").startup(function(use)
 		},
 	})
 	-- theme
-	use({ "catppuccin/nvim", as = "catppuccin" })
+	use({
+		"mcchrish/zenbones.nvim",
+		-- Optionally install Lush. Allows for more configuration or extending the colorscheme
+		-- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+		-- In Vim, compat mode is turned on as Lush only works in Neovim.
+		requires = "rktjmp/lush.nvim",
+	})
+	use("f-person/auto-dark-mode.nvim")
 	use("nvim-tree/nvim-web-devicons")
 	use({ "romgrk/barbar.nvim", wants = "nvim-web-devicons" })
 	use({
@@ -62,6 +69,7 @@ require("packer").startup(function(use)
 			require("gitsigns").setup()
 		end,
 	})
+	use("rhysd/git-messenger.vim")
 	-- treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	-- mason
@@ -72,14 +80,20 @@ require("packer").startup(function(use)
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
 	})
 	-- lspconfig
-	use({
-		"neovim/nvim-lspconfig",
-		config = function()
-			local lspconfig = require("lspconfig")
-			lspconfig.sumneko_lua.setup({})
-		end,
-	})
+	use({ "neovim/nvim-lspconfig" })
 	if packer_bootstrap then
 		require("packer").sync()
 	end
+	-- Lua
+	use({
+		"folke/trouble.nvim",
+		requires = "nvim-tree/nvim-web-devicons",
+		config = function()
+			require("trouble").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
 end)
