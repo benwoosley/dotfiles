@@ -30,6 +30,8 @@ null_ls.setup({
 		-- spell
 		diagnostics.misspell,
 		diagnostics.codespell,
+		-- sql
+		formatting.sqlformat,
 	},
 	on_attach = function(client, bufnr)
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

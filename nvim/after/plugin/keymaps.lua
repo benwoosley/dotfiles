@@ -89,3 +89,8 @@ vim.g.nvim_tree_root_folder_modifier = ":~" --This is the default. See :help fil
 
 -- NVIM Tree
 map("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
+
+-- toggle term
+vim.api.nvim_set_keymap("n", "<C- >", "<cmd>ToggleTerm direction=horizontal<CR>", { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap("t", "<C- >", "<cmd>ToggleTerm direction=horizontal<CR>", { noremap = true, silent = true })

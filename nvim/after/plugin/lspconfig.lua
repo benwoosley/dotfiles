@@ -106,6 +106,7 @@ local servers = {
 	"html",
 	"omnisharp",
 	"gopls",
+	"pyright",
 }
 
 for _, server in ipairs(servers) do
